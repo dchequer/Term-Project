@@ -1,3 +1,4 @@
+from typing import Mapping
 import yaml
 from pathlib import Path
 
