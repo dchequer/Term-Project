@@ -10,7 +10,7 @@ root.resizable(False, False)
 
 lengthOfHeaders = 0; valueOfCheckList = []; valueOfComboList = []; buttonsAndChecksList = []; df = pd.DataFrame
 
-def getCSVFile():
+def getCSVFile() -> None:
     global df
     root.filename = filedialog.askopenfilename(title="Select A CSV File", filetypes=[("CSV Files", "*.csv")])
     df = pd.read_csv(root.filename)
@@ -19,7 +19,7 @@ def getCSVFile():
     gg.grid(column=0, row=(6+lengthOfHeaders), columnspan=2)
     buttonsAndChecksList.append(gg)
 
-def getCSVHeaders(df: pd.DataFrame):
+def getCSVHeaders(df: pd.DataFrame) -> None:
     global lengthOfHeaders, valueOfCheckList, buttonsAndChecksList, valueOfComboList
     valueOfCheckList.clear()
     valueOfComboList.clear()
