@@ -139,7 +139,10 @@ def getStats(df: pd.DataFrame):
         f = 0
         secondPartOfText = ''
         for data in seary:
-            secondPartOfText += statsNamesList[f] + ': ' + str(round(data, 2)) + "        "
+            try:
+                secondPartOfText += statsNamesList[f] + ': ' + str(round(data, 2)) + "        "
+            except TypeError:
+                secondPartOfText += statsNamesList[f] + ': ' + str(data) + "        "
             f += 1
         completeStatsList.append(secondPartOfText)
     c = 0
