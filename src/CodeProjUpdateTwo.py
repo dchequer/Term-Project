@@ -19,6 +19,11 @@ valueOfCheckList = []; valueOfComboList = []; buttonsAndChecksList = []; timeVal
 def getCSVFile():
     global df
     root.filename = filedialog.askopenfilename(title="Select A CSV File", filetypes=[("CSV Files", "*.csv")])
+
+    # catch if user doesn't select a file
+    if root.filename == "":
+        return
+    
     df = pd.read_csv(root.filename)
     getCSVHeaders(df)
     placeButtons(69)
